@@ -1,99 +1,87 @@
 @extends('admin.layout.adminapp')
-
 @section('content')
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="/ly/lqk">录入</a></li>
+            <li class="layui-this"><a href="/ly/cqk">查询</a></li>
+        </ul>
+    </div>
+    <div class="layui-form">
+        <form class="layui-form" action="">
 
-    <div style="padding:0px 10px;">
-        <div class="layui-tab layui-tab-brief">
-            <ul class="layui-tab-title">
-                <li><a href="/ly/lqk">录入</a></li>
-                <li class="layui-this"><a href="/ly/cqk">查询</a></li>
-            </ul>
-        </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">单位名称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" placeholder="请输入单位名称"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">实际年份</label>
+                <div class="layui-input-block">
+                    <select name="city">
+                        <option value="">请选择实际所属年份</option>
+                        <option value="0">2017</option>
+                        <option value="1">2018</option>
+                    </select>
+                </div>
+            </div>
 
-        <div class="layui-form">
-            <form class="layui-form" action="">
-
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <label class="layui-form-label">单位名称</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="title" required lay-verify="required" placeholder="请输入单位名称"
-                                   autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-inline">
-                        <label class="layui-form-label">实际年份</label>
-                        <div class="layui-input-block">
-                            <select name="city" lay-verify="required">
-                                <option value="">请选择实际所属年份</option>
-                                <option value="0">2017</option>
-                                <option value="1">2018</option>
-                            </select>
-                        </div>
-                    </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">责任人</label>
+                <div class="layui-input-block">
+                    <select name="city">
+                        <option value=""></option>
+                        <option value="0">甲</option>
+                        <option value="1">乙</option>
+                    </select>
                 </div>
 
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <label class="layui-form-label">责任人</label>
-                        <div class="layui-input-block">
-                            <select name="city" lay-verify="required">
-                                <option value=""></option>
-                                <option value="0">甲</option>
-                                <option value="1">乙</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="layui-inline">
-                        <label class="layui-form-label">部门</label>
-                        <div class="layui-input-block">
-                            <select name="city" lay-verify="required">
-                                <option value=""></option>
-                                <option value="0">甲</option>
-                                <option value="1">乙</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+            </div>
 
-                <div class="layui-form-item">
-                    <label class="layui-form-label">发布内容</label>
-                    <div class="layui-input-block">
-                        <select name="city" lay-verify="required">
-                            <option value="">请选择发布过往内容</option>
-                            <option value="0">内容1</option>
-                            <option value="1">内容2</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <label class="layui-form-label">发生时间</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-mm-dd"
-                                   autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
-                        </div>
-                        <div class="layui-form-mid">-</div>
-                        <div class="layui-input-inline">
-                            <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-mm-dd"
-                                   autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
-                        </div>
-                    </div>
+            <div class="layui-form-item">
 
+                <label class="layui-form-label">部门</label>
+                <div class="layui-input-block">
+                    <select name="city">
+                        <option value=""></option>
+                        <option value="0">甲</option>
+                        <option value="1">乙</option>
+                    </select>
                 </div>
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">查询</button>
-                    </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">发布内容</label>
+                <div class="layui-input-block">
+                    <select name="city">
+                        <option value="">请选择发布过往内容</option>
+                        <option value="0">内容1</option>
+                        <option value="1">内容2</option>
+                    </select>
                 </div>
-            </form>
+            </div>
+            <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">发生时间</label>
+            <div class="layui-input-inline" style="width: 120px;">
+                <input class="Wdate" type="text" onclick="WdatePicker({firstDayOfWeek:1})" style="border: #eee 1px solid;height: 25px;border-radius: 4px;"/>
+            </div>
+            <div class="layui-input-inline">
+                <input class="Wdate" type="text" onclick="WdatePicker({firstDayOfWeek:1})" style="border: #eee 1px solid;height: 25px;border-radius: 4px;"/>
+            </div>
+            </div>
+
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn layui-btn-small layui-btn-normal" lay-submit lay-filter="formDemo">查询
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div>
             <table class="layui-table">
-                <colgroup>
-                    <col width="150">
-                    <col width="150">
-                    <col width="200">
-                    <col>
-                </colgroup>
                 <thead>
                 <tr>
                     <th>编号</th>
@@ -114,26 +102,176 @@
                 </tr>
                 </thead>
                 <tbody>
-
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
                 </tbody>
-            </table>
-        </div>
-    </div>
 
+            </table>
+            <div id="demo0"></div>
+        </div>
+
+    </div>
 @endsection
 
 @section('custscript')
     <script>
-        layui.use('element', function () {
-            var element = layui.element();
-        });
-
-        layui.use('form', function () {
-            var form = layui.form();
-            //监听提交
-            form.on('submit(formDemo)', function (data) {
-                layer.msg(JSON.stringify(data.field));
-                return false;
+        layui.use(['laypage', 'form'], function () {
+            var laypage = layui.laypage;
+            laypage.render({
+                elem: 'demo0'
+                , count: 50
+                , theme: '#35bce4'
             });
         });
     </script>

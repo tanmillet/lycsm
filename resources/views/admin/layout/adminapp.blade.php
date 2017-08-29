@@ -12,28 +12,36 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="/layui/css/layui.css" media="all"/>
-    <link rel="stylesheet" href="/css/font_eolqem241z66flxr.css" media="all"/>
-    <link rel="stylesheet" href="/css/main.css" media="all"/>
+    <link rel="stylesheet" href="/layui/css/layui.css" />
 </head>
-<body class="main_body">
+<body class="main_body" style="background-color: #eee">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header header">
         <?php  $currentUrl = \Illuminate\Support\Facades\Request::getRequestUri();?>
-        <div style="padding-left: 20%;background-color: #393d49;">
+        <div style="padding: 0px 135px;">
             <ul class="layui-nav" lay-filter="">
-                <li class="layui-nav-item {{($currentUrl == '/ly/baset' ? 'layui-this' : '')}}"><a href="/ly/baset">基础数据</a></li>
-                <li class="layui-nav-item {{($currentUrl == '/ly/cqk' ? 'layui-this' : '')}}"><a href="/ly/cqk">欠款明细</a></li>
-                <li class="layui-nav-item {{($currentUrl == '/ly/chk' ? 'layui-this' : '')}}"><a href="/ly/chk">回款明细</a></li>
-                <li class="layui-nav-item {{($currentUrl == '/ly/lh' ? 'layui-this' : '')}}"><a href="/ly/lh">全部明细</a></li>
+                <span>XXXX管理系统</span>
+                <li class="layui-nav-item {{($currentUrl == '/ly/baset' ? 'layui-this' : '')}}"><a
+                            href="/ly/baset">基础数据</a></li>
+                <li class="layui-nav-item {{($currentUrl == '/ly/cqk' ? 'layui-this' : '')}}"><a href="/ly/cqk">欠款明细</a>
+                </li>
+                <li class="layui-nav-item {{($currentUrl == '/ly/chk' ? 'layui-this' : '')}}"><a href="/ly/chk">回款明细</a>
+                </li>
+                <li class="layui-nav-item {{($currentUrl == '/ly/lh' ? 'layui-this' : '')}}"><a href="/ly/lh">全部明细</a>
+                </li>
             </ul>
         </div>
     </div>
 
-    @yield('content')
+    <div style="margin: 0 auto;position: relative;width: 1420px;">
+        <div style="background: white;min-height: 1200px;">
+            @yield('content')
+        </div>
+    </div>
 
 </div>
 <script type="text/javascript" src="/layui/layui.js"></script>
+<script type="text/javascript" src="/97date/WdatePicker.js"></script>
 @yield('custscript')
 </body>
 </html>
